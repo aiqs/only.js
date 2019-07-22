@@ -60,4 +60,11 @@
 <config-file platform="android" parent="/manifest/application" mode="merge"> 
     <activity android:launchMode="singleTop" />
 </config-file>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
 </widget>
