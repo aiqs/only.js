@@ -43,7 +43,7 @@
     <!-- docs: https://github.com/apache/cordova-plugin-splashscreen -->
     
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-        <application android:usesCleartextTraffic="true" android:cleartextTrafficPermitted="true"/>
+        <application android:usesCleartextTraffic="true"/>
     </edit-config>
     <preference name="SplashMaintainAspectRatio" value="false"/>
 </platform>
