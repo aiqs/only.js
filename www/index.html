@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="http://neosantara.co.id/mobile-assets/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="http://neosantara.co.id/mobile-assets/theme.css?">
+    <link rel="stylesheet" href="http://neosantara.co.id/mobile-assets/slick/slick.css">
+    <link rel="stylesheet" href="http://neosantara.co.id/mobile-assets/slick/slick-theme.css">
+    <link rel="stylesheet" href="http://neosantara.co.id/mobile-assets/style-v1.css?1343002">
+    <link rel="stylesheet" href="assets/first-style.css?1x">
+    <link rel="stylesheet" href="http://neosantara.co.id/mobile-assets/theme-green-008B27.css">
+</head>
+<body class="container" style="overflow-x:hidden">
+    <button class="btn block section theme-d5 round-xxlarge" onclick="test_js_1()">TEST JS 1</button>
+    <button class="btn block section theme-d4 round-xxlarge" onclick="test_js_2(this)">TEST JS 2</button>
+    <div class="btn block section theme-d3 round-xxlarge" onclick="test_js_3(this)">TEST JS 3</div>
+    <div class="text-gray"></div>
+</body>
+<script>
+function test_js_1(){
+    alert('test js 1 berhasil');
+}
+function test_js_2(ths){
+    ths.innerHTML = "js 2 Berhasil";
+    alert('test js 2 berhasil');
+}
+function test_js_3(ths){
+    var xhttp = new XMLHttpRequest(), next = ths.nextElementSibling;
+    next.innerHTML += "- XMLHttpRequest created<br>";
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            next.innerHTML += "- XMLHttpRequest loaded<br>";
+            ths.innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "http://www.neosantara.co.id/mobile-assets/test.php", true);
+    next.innerHTML += "- XMLHttpRequest opened<br>";
+    xhttp.send();
+    next.innerHTML += "- XMLHttpRequest send<br>";
+}
+</script>
+<script src="cordova.js" type="text/javascript" charset="utf-8"></script>
+</html>
